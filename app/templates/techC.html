@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+
+<!--styles block-->
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/techC.css') }}">
+{% endblock %}
+
+
+<!--content block-->
+
+{% block content %}
+
+
 <h1>
     Articles by Techcrunch
 </h1>
-</body>
-</html>
+<ul>
+
+</ul>
+
+
+{% endblock %}
