@@ -11,4 +11,6 @@ def index():
     :return: index page + data
     """
 
-    return render_template('index.html')
+    title = 'Welcome to NewsFactRar'
+
+    return render_template('index.html',title=title)
