@@ -59,3 +59,13 @@ def verge():
 
     return render_template('verge.html',title=title)
 
+
+@app.route('/techC')
+def techC():
+    """
+    :return: Techcrunch page + data
+    """
+
+    title = 'TechCrunch'
+
+    return render_template('techC.html',title=title)
