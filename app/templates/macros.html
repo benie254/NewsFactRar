@@ -47,7 +47,7 @@
 {% endmacro %}
 
 
-{% macro displayAllBbc(my_bbc) %}
+{% macro displayBbcArticles(my_bbc) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_bbc %}
         <li>
@@ -65,7 +65,7 @@
 {% endmacro %}
 
 
-{% macro displayAllCnn(my_cnn) %}
+{% macro displayCnnArticles(my_cnn) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_cnn %}
         <li>
