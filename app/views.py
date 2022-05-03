@@ -14,3 +14,14 @@ def index():
     title = 'Welcome to NewsFactRar'
 
     return render_template('index.html',title=title)
+
+
+@app.route('/articles')
+def articles():
+    """
+    :return: articles page + data
+    """
+
+    title = 'All Articles'
+
+    return render_template('articles.html',title=title)
