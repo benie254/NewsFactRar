@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines,get_sources,get_articles,get_bbc
+from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn
 
 # views
 
@@ -58,8 +58,11 @@ def cnn():
     """
 
     title = 'CNN News'
+    my_cnn = get_cnn()
 
-    return render_template('cnn.html',title=title)
+    print(my_cnn)
+
+    return render_template('cnn.html',title=title,my_cnn=my_cnn)
 
 
 @app.route('/verge')
