@@ -8,6 +8,20 @@
 <h1>
   Welcome to NewsFactRar
 </h1>
+<ul>
+    {% for source, author, title, description, url, urlToImage, publishedAt, content in my_headlines %}
+    <li>
+        <p>{{source.id}}</p>
+        <p>{{author}}</p>
+        <p>{{title}}</p>
+        <p>{{description}}</p>
+        <p>{{url}}</p>
+        <p>{{urlToImage}}</p>
+        <p>{{publishedAt}}</p>
+        <p>{{content}}</p>
+    </li>
+    {% endfor %}
+</ul>
 
 </body>
 </html>
