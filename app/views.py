@@ -69,3 +69,14 @@ def techC():
     title = 'TechCrunch'
 
     return render_template('techC.html',title=title)
+
+
+@app.route('/tRadar')
+def tRadar():
+    """
+    :return: Techradar page + data
+    """
+
+    title = 'TechRadar'
+
+    return render_template('tRadar.html',title=title)
