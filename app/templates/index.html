@@ -1,12 +1,20 @@
+{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
+<html>
 <body>
+
+<!--content block-->
+{% block content %}
+
 <h1>
   Welcome to NewsFactRar
 </h1>
 <ul>
   {{ macro.displayTopHeadlines(my_headlines) }}
 </ul>
+
+{% endblock %}
 
 </body>
 </html>
