@@ -77,3 +77,23 @@ def get_sources():
             source_results = process_sources_results(source_results_list)
 
     return source_results
+
+
+def process_sources_results(source_list):
+    """
+    :param source_list: function--process source results
+    :return: list of source objects
+    """
+
+    source_results = []
+
+    for source_item in source_list:
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+
+        if name:
+            source_object = Sources(name, description, url)
+            source_results.append(source_object)
+
+    return source_results
