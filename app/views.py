@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines,get_sources,get_articles
+from .requests import get_headlines,get_sources,get_articles,get_bbc
 
 # views
 
@@ -44,8 +44,11 @@ def bbc():
     """
 
     title = 'BBC News'
+    my_bbc = get_bbc()
 
-    return render_template('bbc.html',title=title)
+    print(my_bbc)
+
+    return render_template('bbc.html',title=title,my_bbc=my_bbc)
 
 
 @app.route('/cnn')
