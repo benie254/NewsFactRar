@@ -25,3 +25,14 @@ def articles():
     title = 'All Articles'
 
     return render_template('articles.html',title=title)
+
+
+@app.route('/bbc')
+def bbc():
+    """
+    :return: bbc page + data
+    """
+
+    title = 'BBC News'
+
+    return render_template('bbc.html',title=title)
