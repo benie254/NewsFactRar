@@ -134,3 +134,40 @@ def get_articles():
         contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
 
     return contents
+
+
+def get_bbc():
+
+    g_bbc = newsapi.get_everything(sources='bbc-news', language='en')
+
+    all_bbc = g_bbc['articles']
+
+    bbc_results = []
+
+    source = []
+    author = []
+    title = []
+    description = []
+    url = []
+    urlToImage = []
+    publishedAt = []
+    content = []
+
+    for bbc_item in range(len(all_bbc)):
+        bbc = all_bbc[bbc_item]
+
+        source.append(bbc['source'])
+        author.append(bbc['author'])
+        title.append(bbc['title'])
+        description.append(bbc['description'])
+        url.append(bbc['url'])
+        urlToImage.append(bbc['urlToImage'])
+        publishedAt.append(bbc['publishedAt'])
+        content.append(bbc['content'])
+
+        bbc_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
+        bbc_results.append(bbc_object)
+
+        contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
+
+    return contents
