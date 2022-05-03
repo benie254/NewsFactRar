@@ -171,3 +171,40 @@ def get_bbc():
         contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
 
     return contents
+
+
+def get_cnn():
+
+    g_cnn = newsapi.get_everything(sources='cnn',language='en')
+
+    all_cnn = g_cnn['articles']
+
+    cnn_results = []
+
+    source = []
+    author = []
+    title = []
+    description = []
+    url = []
+    urlToImage = []
+    publishedAt = []
+    content = []
+
+    for cnn_item in range(len(all_cnn)):
+        cnn = all_cnn[cnn_item]
+
+        source.append(cnn['source'])
+        author.append(cnn['author'])
+        title.append(cnn['title'])
+        description.append(cnn['description'])
+        url.append(cnn['url'])
+        urlToImage.append(cnn['urlToImage'])
+        publishedAt.append(cnn['publishedAt'])
+        content.append(cnn['content'])
+
+        cnn_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
+        cnn_results.append(cnn_object)
+
+        contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
+
+    return contents
