@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines,get_sources
+from .requests import get_headlines,get_sources,get_articles
 
 # views
 
@@ -30,8 +30,11 @@ def articles():
     """
 
     title = 'All Articles'
+    my_articles = get_articles()
 
-    return render_template('articles.html',title=title)
+    print(my_articles)
+
+    return render_template('articles.html',title=title,my_articles=my_articles)
 
 
 @app.route('/bbc')
