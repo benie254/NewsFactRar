@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
-<html>
-<body>
+<!--styles block-->
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
 
 <!--content block-->
+
 {% block content %}
 
 <h1>
@@ -15,6 +21,3 @@
 </ul>
 
 {% endblock %}
-
-</body>
-</html>
