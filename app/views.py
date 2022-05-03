@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines
+from .requests import get_headlines,get_sources
 
 # views
 
@@ -15,8 +15,12 @@ def index():
     title = 'Welcome to NewsFactRar'
 
     my_headlines = get_headlines()
+    my_sources = get_sources()
 
-    return render_template('index.html',title=title,my_headlines=my_headlines)
+    print(my_headlines)
+    print(my_sources)
+
+    return render_template('index.html',title=title,my_headlines=my_headlines,my_sources=my_sources)
 
 
 @app.route('/articles')
