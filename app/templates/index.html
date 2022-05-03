@@ -16,8 +16,19 @@
 <h1>
   Welcome to NewsFactRar
 </h1>
+
+<h2>
+    Top Headlines
+</h2>
 <ul>
   {{ macro.displayTopHeadlines(my_headlines) }}
+</ul>
+
+<h2>
+    Top Sources
+</h2>
+<ul>
+    {{ macro.displayAllSources(my_sources) }}
 </ul>
 
 {% endblock %}

@@ -14,3 +14,16 @@
     {% endfor %}
 
 {% endmacro %}
+
+
+{% macro displayAllSources(my_sources) %}
+
+    {% for source in my_sources %}
+        <li>
+            <p>{{source.name}}</p>
+            <p>{{source.description}}</p>
+            <p>{{source.url}}</p>
+        </li>
+    {% endfor %}
+
+{% endmacro %}
