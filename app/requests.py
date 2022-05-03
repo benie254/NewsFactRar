@@ -24,9 +24,9 @@ def get_headlines():
     :return: response to NewsApiClient request
     """
 
-    get_headlines = newsapi.get_top_headlines(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
+    headlines = newsapi.get_top_headlines(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
-    all_headlines = get_headlines['articles']
+    all_headlines = headlines['articles']
 
     headlines_results = []
 
@@ -57,3 +57,23 @@ def get_headlines():
         contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
 
     return contents
+
+
+def get_sources():
+    """
+    :return: request
+    """
+
+    get_sources_url = 'https://newsapi.org/v2/sources?apiKey=' + api_key
+
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data = url.read()
+        get_sources_response = json.loads(get_sources_data)
+
+        source_results = None
+
+        if get_sources_response['sources']:
+            source_results_list = get_sources_response['sources']
+            source_results = process_sources_results(source_results_list)
+
+    return source_results
