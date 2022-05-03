@@ -97,3 +97,40 @@ def process_sources_results(source_list):
             source_results.append(source_object)
 
     return source_results
+
+
+def get_articles():
+
+    articles = newsapi.get_everything(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
+
+    all_articles = articles['articles']
+
+    articles_results = []
+
+    source = []
+    author = []
+    title = []
+    description = []
+    url = []
+    urlToImage = []
+    publishedAt = []
+    content = []
+
+    for article_item in range(len(all_articles)):
+        article = all_articles[article_item]
+
+        source.append(article['source'])
+        author.append(article['author'])
+        title.append(article['title'])
+        description.append(article['description'])
+        url.append(article['url'])
+        urlToImage.append(article['urlToImage'])
+        publishedAt.append(article['publishedAt'])
+        content.append(article['content'])
+
+        article_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
+        articles_results.append(article_object)
+
+        contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
+
+    return contents
