@@ -1,13 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+
+<!--styles block-->
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/cnn.css') }}">
+{% endblock %}
+
+
+<!--content block-->
+
+{% block content %}
+
+
 <h1>
   News Articles by CNN
 </h1>
+<ul>
 
-</body>
-</html>
+</ul>
+
+
+{% endblock %}
+
