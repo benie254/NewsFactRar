@@ -36,3 +36,14 @@ def bbc():
     title = 'BBC News'
 
     return render_template('bbc.html',title=title)
+
+
+@app.route('/cnn')
+def cnn():
+    """
+    :return: cnn page + data
+    """
+
+    title = 'CNN News'
+
+    return render_template('cnn.html',title=title)
