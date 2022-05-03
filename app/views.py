@@ -47,3 +47,15 @@ def cnn():
     title = 'CNN News'
 
     return render_template('cnn.html',title=title)
+
+
+@app.route('/verge')
+def verge():
+    """
+    :return: the-verge page + data
+    """
+
+    title = 'The Verge'
+
+    return render_template('verge.html',title=title)
+
