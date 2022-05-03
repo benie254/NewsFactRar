@@ -45,3 +45,21 @@
     {% endfor %}
 
 {% endmacro %}
+
+
+{% macro displayAllBBC(my_bbc) %}
+
+    {% for source, author, title, description, url, urlToImage, publishedAt, content in my_bbc %}
+        <li>
+            <p>{{source.id}}</p>
+            <p>{{author}}</p>
+            <p>{{title}}</p>
+            <p>{{description}}</p>
+            <p>{{url}}</p>
+            <p>{{urlToImage}}</p>
+            <p>{{publishedAt}}</p>
+            <p>{{content}}</p>
+        </li>
+    {% endfor %}
+
+{% endmacro %}
