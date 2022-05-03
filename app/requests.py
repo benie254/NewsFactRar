@@ -208,3 +208,40 @@ def get_cnn():
         contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
 
     return contents
+
+
+def get_tech():
+
+    g_tech = newsapi.get_everything(sources='techcrunch',language='en')
+
+    all_tech = g_tech['articles']
+
+    tech_results = []
+
+    source = []
+    author = []
+    title = []
+    description = []
+    url = []
+    urlToImage = []
+    publishedAt = []
+    content = []
+
+    for tech_item in range(len(all_tech)):
+        tech = all_tech[tech_item]
+
+        source.append(tech['source'])
+        author.append(tech['author'])
+        title.append(tech['title'])
+        description.append(tech['description'])
+        url.append(tech['url'])
+        urlToImage.append(tech['urlToImage'])
+        publishedAt.append(tech['publishedAt'])
+        content.append(tech['content'])
+
+        tech_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
+        tech_results.append(tech_object)
+
+        contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
+
+    return contents
