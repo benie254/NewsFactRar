@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech,get_tradar
+from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech,get_tradar,get_verge
 
 # views
 
@@ -100,5 +100,6 @@ def verge():
     """
 
     title = 'The Verge'
+    my_verge = get_verge()
 
-    return render_template('verge.html',title=title)
+    return render_template('verge.html',title=title,my_verge=my_verge)
