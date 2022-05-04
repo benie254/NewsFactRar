@@ -2,8 +2,8 @@
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_headlines %}
   <div class="col">
-    <div class="card h-200">
-      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image">
+    <div class="card h-100">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="200">
       <div class="card-body">
           <a href="{{url}}">
            <h5 class="card-title">{{title}}</h5>
