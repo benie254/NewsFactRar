@@ -282,3 +282,40 @@ def get_tradar():
         contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
 
     return contents
+
+
+def get_verge():
+
+    g_verge = newsapi.get_everything(sources='the-verge',language='en')
+
+    all_verge = g_verge['articles']
+
+    verge_results = []
+
+    source = []
+    author = []
+    title = []
+    description = []
+    url = []
+    urlToImage = []
+    publishedAt = []
+    content = []
+
+    for verge_item in range(len(all_verge)):
+        verge = all_verge[verge_item]
+
+        source.append(verge['source'])
+        author.append(verge['author'])
+        title.append(verge['title'])
+        description.append(verge['description'])
+        url.append(verge['url'])
+        urlToImage.append(verge['urlToImage'])
+        publishedAt.append(verge['publishedAt'])
+        content.append(verge['content'])
+
+        verge_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
+        verge_results.append(verge_object)
+
+        contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
+
+    return contents
