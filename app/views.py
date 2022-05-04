@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech
+from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech,get_tradar
 
 # views
 
@@ -65,17 +65,6 @@ def cnn():
     return render_template('cnn.html',title=title,my_cnn=my_cnn)
 
 
-@app.route('/verge')
-def verge():
-    """
-    :return: the-verge page + data
-    """
-
-    title = 'The Verge'
-
-    return render_template('verge.html',title=title)
-
-
 @app.route('/techC')
 def techC():
     """
@@ -97,5 +86,19 @@ def tRadar():
     """
 
     title = 'TechRadar'
+    my_tradar = get_tradar()
 
-    return render_template('tRadar.html',title=title)
+    print(my_tradar)
+
+    return render_template('tRadar.html',title=title,my_tradar=my_tradar)
+
+
+@app.route('/verge')
+def verge():
+    """
+    :return: the-verge page + data
+    """
+
+    title = 'The Verge'
+
+    return render_template('verge.html',title=title)
