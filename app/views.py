@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn
+from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech
 
 # views
 
@@ -83,8 +83,11 @@ def techC():
     """
 
     title = 'TechCrunch'
+    my_tech = get_tech()
 
-    return render_template('techC.html',title=title)
+    print(my_tech)
+
+    return render_template('techC.html',title=title,my_tech=my_tech)
 
 
 @app.route('/tRadar')
