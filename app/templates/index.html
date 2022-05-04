@@ -18,23 +18,18 @@
 </h1>
 
 <div class="row">
-    <div class="col">
-      <h2>
-          Top Headlines
-      </h2>
-      <ul>
-        {{ macro.displayTopHeadlines(my_headlines) }}
-      </ul>
-    </div>
+    <h2>
+        Top Headlines
+    </h2>
 
-    <div class="col">
-        <h2>
-            Top Sources
-        </h2>
-        <ul>
-            {{ macro.displayAllSources(my_sources) }}
-        </ul>
-    </div>
+    {{ macro.displayTopHeadlines(my_headlines) }}
+
+
+    <h2>
+        Top Sources
+    </h2>
+
+    {{ macro.displayAllSources(my_sources) }}
 
 </div>
 
