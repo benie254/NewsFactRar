@@ -46,7 +46,7 @@ def sources():
     title = 'All Sources'
     my_sources = get_sources()
 
-    return render_template('articles.html',title=title,my_sources=my_sources)
+    return render_template('sources.html',title=title,my_sources=my_sources)
 
 
 @app.route('/bbc')
