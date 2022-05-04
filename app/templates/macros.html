@@ -1,16 +1,23 @@
 {% macro displayTopHeadlines(my_headlines) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_headlines %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col">
+    <div class="card h-200">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title">{{title}}</h5>
+          </a>
+          <h6 class="card-text">{{description}}</h6>
+          <p class="card-text">{{content}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> <i> Author: {{author}} </i> | <i> Source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
+
     {% endfor %}
 
 {% endmacro %}
