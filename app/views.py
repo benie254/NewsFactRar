@@ -37,6 +37,18 @@ def articles():
     return render_template('articles.html',title=title,my_articles=my_articles)
 
 
+@app.route('/sources')
+def sources():
+    """
+    :return: sources page + data
+    """
+
+    title = 'All Sources'
+    my_sources = get_sources()
+
+    return render_template('articles.html',title=title,my_sources=my_sources)
+
+
 @app.route('/bbc')
 def bbc():
     """
