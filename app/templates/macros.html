@@ -81,3 +81,21 @@
     {% endfor %}
 
 {% endmacro %}
+
+
+{% macro displayTechCrunchArticles(my_tech) %}
+
+    {% for source, author, title, description, url, urlToImage, publishedAt, content in my_tech %}
+        <li>
+            <p>{{source.id}}</p>
+            <p>{{author}}</p>
+            <p>{{title}}</p>
+            <p>{{description}}</p>
+            <p>{{url}}</p>
+            <p>{{urlToImage}}</p>
+            <p>{{publishedAt}}</p>
+            <p>{{content}}</p>
+        </li>
+    {% endfor %}
+
+{% endmacro %}
