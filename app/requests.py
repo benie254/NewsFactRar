@@ -245,3 +245,40 @@ def get_tech():
         contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
 
     return contents
+
+
+def get_tradar():
+
+    g_tradar = newsapi.get_everything(sources='techradar', language='en')
+
+    all_tradar = g_tradar['articles']
+
+    tradar_results = []
+
+    source = []
+    author = []
+    title = []
+    description = []
+    url = []
+    urlToImage = []
+    publishedAt = []
+    content = []
+
+    for tradar_item in range(len(all_tradar)):
+        tradar = all_tradar[tradar_item]
+
+        source.append(tradar['source'])
+        author.append(tradar['author'])
+        title.append(tradar['title'])
+        description.append(tradar['description'])
+        url.append(tradar['url'])
+        urlToImage.append(tradar['urlToImage'])
+        publishedAt.append(tradar['publishedAt'])
+        content.append(tradar['content'])
+
+        tradar_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
+        tradar_results.append(tradar_object)
+
+        contents = zip(source, author, title, description, url, urlToImage, publishedAt, content)
+
+    return contents
