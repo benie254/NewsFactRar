@@ -1,11 +1,8 @@
-# from app import main
 import urllib.request,json
-from .models import articles
-from .models import sources
+from .models import Articles
+from .models import Sources
 from newsapi import NewsApiClient
 
-Articles = articles.Articles
-Sources = sources.Sources
 
 def configure_request(app):
     global api_key,base_url,base_url_art,newsapi
