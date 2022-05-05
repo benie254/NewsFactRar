@@ -1,3 +1,4 @@
+/*import google*/
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
@@ -6,59 +7,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Kite+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
-/*
-@media screen and (max-width: 720px){
-.container-macro {width:50%;}
-}
-@media screen and (max-width: 1080px){
-.container-macro {width:75%;}
-}
-@media screen and (max-width: 480px){
-.container-macro {width:15%;}
-}*/
 
+/*navbar*/
+.navbar a {
+color: #F06900;
+}
+
+/*media queries for sidebar*/
 @media screen and (max-width: 800px){
 div.container-sources {display:none;}
 }
-/*@media screen and (max-height: 480px){
-div.container-sources {display:none;}
-}*/
-
-/*@media screen and (max-width: 720px){
-.container-headlines {margin-left:10%;}
-}*/
 @media screen and (max-width: 880px){
 .container-headlines {margin-left:10%}
 }
 @media screen and (max-width: 1080px){
 .container-headlines {margin-left:10%;}
 }
-
 @media screen and (max-width: 1920px){
 .container-headlines {margin-left:15%;}
 }
 
+/*top headings for all pages*/
 .container-home h1, .container-bbc h1, .container-cnn h1, .container-sources h1, .container-articles h1, .container-tech h1, .container-tradar h1, .container-verge h1 {
 text-align: center;
 color: #FF7D19;
 font-family:Bungee Inline;
 }
 
-/*.container-home, .container-bbc, .container-cnn, .container-sources, .container-tech, .container-tradar, .container-verge {
-text-align: center;
-color: #00D4F0;
-font-weight: bold;
-}*/
-
-.navbar a {
-color: #F06900;
-}
-
-/** {
-background-color: #A34700;
-color: #00D4F0;
-}*/
-
+/*all cards*/
 .card-content {
 background-color: #A34700;
 padding: 5%;
@@ -94,9 +70,5 @@ line-height: 2;
 }
 
 
-/*h {
-background-color: #A34700;
-color: #0090A3;
-}*/
 
 
