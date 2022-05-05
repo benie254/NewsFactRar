@@ -1,4 +1,4 @@
-from app import app
+# from app import main
 import urllib.request,json
 from .models import articles
 from .models import sources
@@ -7,22 +7,23 @@ from newsapi import NewsApiClient
 Articles = articles.Articles
 Sources = sources.Sources
 
-# get api key
-api_key = app.config['NEWS_API_KEY']
-
-# get news base url
-base_url = app.config['NEWS_API_BASE_URL']
-
-# get articles base url
-base_url_art = app.config['ARTICLES_API_BASE_URL']
-
-newsapi = NewsApiClient(api_key=api_key)
+def configure_request(app):
+    global api_key,base_url,base_url_art,newsapi
+    # get api key
+    api_key = app.config['NEWS_API_KEY']
+    # get news base url
+    base_url = app.config['NEWS_API_BASE_URL']
+    # get articles base url
+    base_url_art = app.config['ARTICLES_API_BASE_URL']
+    newsapi = NewsApiClient(api_key=api_key)
 
 
 def get_headlines():
     """
     :return: response to NewsApiClient request
     """
+
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
 
     headlines = newsapi.get_top_headlines(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
@@ -64,7 +65,7 @@ def get_sources():
     :return: request
     """
 
-    get_sources_url = 'https://newsapi.org/v2/sources?apiKey=' + api_key
+    get_sources_url = 'https://newsapi.org/v2/sources?language=en&apiKey=cf03c3d8de3e48ffa0b0ed1f93681891'
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -91,15 +92,19 @@ def process_sources_results(source_list):
         name = source_item.get('name')
         description = source_item.get('description')
         url = source_item.get('url')
+        category = source_item.get('category')
+        country = source_item.get('country')
 
         if name:
-            source_object = Sources(name, description, url)
+            source_object = Sources(name, description, url, category, country)
             source_results.append(source_object)
 
     return source_results
 
 
 def get_articles():
+
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
 
     articles = newsapi.get_everything(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
@@ -138,6 +143,8 @@ def get_articles():
 
 def get_bbc():
 
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+
     g_bbc = newsapi.get_everything(sources='bbc-news', language='en')
 
     all_bbc = g_bbc['articles']
@@ -174,6 +181,8 @@ def get_bbc():
 
 
 def get_cnn():
+
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
 
     g_cnn = newsapi.get_everything(sources='cnn',language='en')
 
@@ -212,6 +221,8 @@ def get_cnn():
 
 def get_tech():
 
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+
     g_tech = newsapi.get_everything(sources='techcrunch',language='en')
 
     all_tech = g_tech['articles']
@@ -249,6 +260,8 @@ def get_tech():
 
 def get_tradar():
 
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+
     g_tradar = newsapi.get_everything(sources='techradar', language='en')
 
     all_tradar = g_tradar['articles']
@@ -285,6 +298,8 @@ def get_tradar():
 
 
 def get_verge():
+
+    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
 
     g_verge = newsapi.get_everything(sources='the-verge',language='en')
 

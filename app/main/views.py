@@ -1,11 +1,11 @@
 from flask import render_template
-from app import app
-from .requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech,get_tradar,get_verge
+from . import main
+from app.requests import get_headlines,get_sources,get_articles,get_bbc,get_cnn,get_tech,get_tradar,get_verge
 
 # views
 
 
-@app.route('/')
+@main.route('/')
 def index():
 
     """
@@ -23,7 +23,7 @@ def index():
     return render_template('index.html',title=title,my_headlines=my_headlines,my_sources=my_sources)
 
 
-@app.route('/articles')
+@main.route('/articles')
 def articles():
     """
     :return: articles page + data
@@ -37,7 +37,7 @@ def articles():
     return render_template('articles.html',title=title,my_articles=my_articles)
 
 
-@app.route('/sources')
+@main.route('/sources')
 def sources():
     """
     :return: sources page + data
@@ -49,7 +49,7 @@ def sources():
     return render_template('sources.html',title=title,my_sources=my_sources)
 
 
-@app.route('/bbc')
+@main.route('/bbc')
 def bbc():
     """
     :return: bbc page + data
@@ -63,7 +63,7 @@ def bbc():
     return render_template('bbc.html',title=title,my_bbc=my_bbc)
 
 
-@app.route('/cnn')
+@main.route('/cnn')
 def cnn():
     """
     :return: cnn page + data
@@ -77,7 +77,7 @@ def cnn():
     return render_template('cnn.html',title=title,my_cnn=my_cnn)
 
 
-@app.route('/techC')
+@main.route('/techC')
 def techC():
     """
     :return: Techcrunch page + data
@@ -91,7 +91,7 @@ def techC():
     return render_template('techC.html',title=title,my_tech=my_tech)
 
 
-@app.route('/tRadar')
+@main.route('/tRadar')
 def tRadar():
     """
     :return: Techradar page + data
@@ -105,7 +105,7 @@ def tRadar():
     return render_template('tRadar.html',title=title,my_tradar=my_tradar)
 
 
-@app.route('/verge')
+@main.route('/verge')
 def verge():
     """
     :return: the-verge page + data

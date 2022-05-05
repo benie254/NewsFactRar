@@ -5,18 +5,25 @@
 <!--styles block-->
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/sources.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
 {% endblock %}
 
 
 <!--content block-->
 {% block content %}
 
-<h2>
-    All Sources
-</h2>
-<ul>
-    {{ macro.displayAllSources(my_sources) }}
-</ul>
+
+<div class="container container-sources">
+
+    <h1>
+        All Sources
+    </h1>
+
+    <div class="container container-sources-macros">
+        {{ macro.displaySources(my_sources) }}
+    </div>
+
+</div>
+
 
 {% endblock %}

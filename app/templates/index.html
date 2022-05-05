@@ -13,25 +13,32 @@
 
 {% block content %}
 
-<h1>
-  Welcome to NewsFactRar
-</h1>
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <h2>
-        Top Headlines
-    </h2>
-
-    {{ macro.displayTopHeadlines(my_headlines) }}
 
 
-    <h2>
-        Top Sources
-    </h2>
+<div class="container container-home">
 
-    {{ macro.displayAllSources(my_sources) }}
+
+    <h1 style="font-family:Rammetto One;font-size:45px;">
+        Welcome to NewsFactRar
+    </h1>
+    <hr>
+
+    <div class="container container-headlines">
+        {{ macro.displayTopHeadlines(my_headlines) }}
+    </div>
+
+    <div class="container container-sources">
+        {{ macro.displayAllSources(my_sources) }}
+    </div>
+
 
 </div>
+
+
+
+
+
+
 
 
 {% endblock %}

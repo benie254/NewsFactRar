@@ -1,22 +1,36 @@
+{% extends 'base.html' %}
+
+
+<!--styles block-->
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+
+
 {% macro displayTopHeadlines(my_headlines) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_headlines %}
-  <div class="col">
-    <div class="card h-100">
-      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="200">
+
+  <div class="col-md-6 col-macros">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
       <div class="card-body">
           <a href="{{url}}">
-           <h5 class="card-title">{{title}}</h5>
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
           </a>
-          <h6 class="card-text">{{description}}</h6>
-          <p class="card-text">{{content}}</p>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Published {{publishedAt}}</small>
-          <small class="text-muted"> <i> Author: {{author}} </i> | <i> Source: {{source.id}} </i> </small>
+        <small class="text-muted" style="color:#F06900">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
       </div>
     </div>
   </div>
+
 
     {% endfor %}
 
@@ -25,13 +39,48 @@
 
 {% macro displayAllSources(my_sources) %}
 
+<div class="container container-macros-sidebar">
+   <div class="wrapper">
+       <div class="sidebar" style="height:90%;width:200px;position:fixed;z-index:1;bottom:0;left:0;overflow-x:hidden;padding-top:20px;margin-left:1.5%;">
+           <h2 style="text-align:center;color:#A34700;font-family:Bungee Inline;"> Sources </h2>
+           {% for source in my_sources %}
+               <div class="card text-white bg-success mb-3" style="max-width: 25rem;text-align:center;padding-left:2%;">
+                   <div class="card-header" style="padding-top:5%;font-family: 'Kite One';">
+                       <a href="{{source.url}}"> {{source.name}} </a>
+                   </div>
+                   <div class="card-body">
+                       <h5 class="card-title"> About <i style="font-size:small;"> {{source.name}} </i> </h5>
+                       <p class="card-text" style="padding-bottom:5%;">{{source.description}}</p>
+                   </div>
+               </div>
+           {% endfor %}
+       </div>
+   </div>
+</div>
+
+{% endmacro %}
+
+
+{% macro displaySources(my_sources) %}
+
+<div class="container container-macros-sources">
     {% for source in my_sources %}
-        <li>
-            <p>{{source.name}}</p>
-            <p>{{source.description}}</p>
-            <p>{{source.url}}</p>
-        </li>
-    {% endfor %}
+    <div class="col-md-3">
+        <div class="card h-100 text-white bg-success border-info mb-3" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;padding-left:5%;">
+            <div class="card-body">
+                <a href="{{source.url}}">
+                    <h5 class="card-title border-info">{{source.name}}</h5>
+                </a>
+                <h6 class="card-text">{{source.description}}</h6>
+            </div>
+            <div class="card-footer bg-transparent border-info" style="text-align: center;">
+                <small class="text-muted"> <i> category: {{source.country}} </i>  |  <i> country: {{source.category}} </i> </small>
+            </div>
+        </div>
+    </div>
+           {% endfor %}
+</div>
+
 
 {% endmacro %}
 
@@ -39,16 +88,24 @@
 {% macro displayAllArticles(my_articles) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_articles %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col-md-6 col-macros-articles">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
+          </a>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
     {% endfor %}
 
 {% endmacro %}
@@ -57,16 +114,24 @@
 {% macro displayBbcArticles(my_bbc) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_bbc %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col-md-6 col-macros-bbc">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
+          </a>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
     {% endfor %}
 
 {% endmacro %}
@@ -75,16 +140,24 @@
 {% macro displayCnnArticles(my_cnn) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_cnn %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col-md-6 col-macros-cnn">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
+          </a>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
     {% endfor %}
 
 {% endmacro %}
@@ -93,16 +166,24 @@
 {% macro displayTechCrunchArticles(my_tech) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_tech %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col-md-6 col-macros-tech">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
+          </a>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
     {% endfor %}
 
 {% endmacro %}
@@ -111,16 +192,24 @@
 {% macro displayTechRadarArticles(my_tradar) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_tradar %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col-md-6 col-macros-tradar">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
+          </a>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
     {% endfor %}
 
 {% endmacro %}
@@ -129,16 +218,24 @@
 {% macro displayTheVergeArticles(my_verge) %}
 
     {% for source, author, title, description, url, urlToImage, publishedAt, content in my_verge %}
-        <li>
-            <p>{{source.id}}</p>
-            <p>{{author}}</p>
-            <p>{{title}}</p>
-            <p>{{description}}</p>
-            <p>{{url}}</p>
-            <p>{{urlToImage}}</p>
-            <p>{{publishedAt}}</p>
-            <p>{{content}}</p>
-        </li>
+  <div class="col-md-6 col-macros-verge">
+    <div class="card h-100" style="margin-top:1.5%;margin-bottom:1.5%;padding-top:3.5%;padding-bottom:3.5%;padding-right:5%;">
+      <img src="{{urlToImage}}" class="card-img-top" alt="{{title}} image" width="100%">
+      <div class="card-body">
+          <a href="{{url}}">
+           <h5 class="card-title" style="color:#A34700">{{title}}</h5>
+          </a>
+          <div class="card-content">
+              <h6 class="card-text">{{description}}</h6>
+              <p class="card-text">{{content}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published {{publishedAt}}</small>
+          <small class="text-muted"> | | <i> source: {{source.id}} </i> </small>
+      </div>
+    </div>
+  </div>
     {% endfor %}
 
 {% endmacro %}

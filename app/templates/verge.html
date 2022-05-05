@@ -5,7 +5,7 @@
 
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/verge.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
 {% endblock %}
 
 
@@ -14,12 +14,17 @@
 {% block content %}
 
 
-<h1>
-  Articles by The Verge
-</h1>
-<ul>
-    {{ macro.displayTheVergeArticles(my_verge) }}
-</ul>
+<div class="container container-verge">
+
+    <h1>
+        Articles by The Verge
+    </h1>
+
+    <div class="container container-verge-macros">
+        {{ macro.displayTheVergeArticles(my_verge) }}
+    </div>
+
+</div>
 
 
 {% endblock %}

@@ -6,7 +6,7 @@
 
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/cnn.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
 {% endblock %}
 
 
@@ -15,12 +15,17 @@
 {% block content %}
 
 
-<h1>
-  News Articles by CNN
-</h1>
-<ul>
-    {{ macro.displayCnnArticles(my_cnn) }}
-</ul>
+<div class="container container-cnn">
+
+    <h1>
+        News Articles by CNN
+    </h1>
+
+    <div class="container container-cnn-macros">
+        {{ macro.displayCnnArticles(my_cnn) }}
+    </div>
+
+</div>
 
 
 {% endblock %}
