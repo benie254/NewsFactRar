@@ -29,7 +29,7 @@ def articles():
     :return: articles page + data
     """
 
-    title = 'All Articles'
+    title = 'NewsFR-Articles'
     my_articles = get_articles()
 
     print(my_articles)
@@ -43,7 +43,7 @@ def sources():
     :return: sources page + data
     """
 
-    title = 'All Sources'
+    title = 'NewsFR-Sources'
     my_sources = get_sources()
 
     return render_template('sources.html',title=title,my_sources=my_sources)
@@ -55,7 +55,7 @@ def bbc():
     :return: bbc page + data
     """
 
-    title = 'BBC News'
+    title = 'NewsFR-BBC'
     my_bbc = get_bbc()
 
     print(my_bbc)
@@ -69,7 +69,7 @@ def cnn():
     :return: cnn page + data
     """
 
-    title = 'CNN News'
+    title = 'NewsFR-News'
     my_cnn = get_cnn()
 
     print(my_cnn)
@@ -83,7 +83,7 @@ def techC():
     :return: Techcrunch page + data
     """
 
-    title = 'TechCrunch'
+    title = 'NewsFR-TechCrunch'
     my_tech = get_tech()
 
     print(my_tech)
@@ -97,7 +97,7 @@ def tRadar():
     :return: Techradar page + data
     """
 
-    title = 'TechRadar'
+    title = 'NewsFR-TechRadar'
     my_tradar = get_tradar()
 
     print(my_tradar)
@@ -111,7 +111,7 @@ def verge():
     :return: the-verge page + data
     """
 
-    title = 'The Verge'
+    title = 'NewsFR-TheVerge'
     my_verge = get_verge()
 
     return render_template('verge.html',title=title,my_verge=my_verge)
