@@ -67,6 +67,8 @@ def get_sources():
 
     get_sources_url = 'https://newsapi.org/v2/sources?language=en&apiKey=cf03c3d8de3e48ffa0b0ed1f93681891'
 
+    'https://newsapi.org/v2/everything?q=us&from=2022-04-12&language=en&apiKey=cae08cf647104f67ba2f3b6a8c539dd9'
+
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
