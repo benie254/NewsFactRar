@@ -13,6 +13,10 @@
 color: #F06900;
 }
 
+div.container-macros-sidebar {
+height:90%;
+}
+
 /*media queries for sidebar*/
 @media screen and (max-width: 720px){
 div.container-macros-sidebar {display:none;}
@@ -26,7 +30,7 @@ div.container-macros-sidebar {display:none;}
 }
 @media screen and (max-width: 1080px){
 .container-headlines {margin-left:10%;}
-div.container-macros-sidebar .sidebar{max-height:80%}
+div.container-macros-sidebar .sidebar{max-height:70%}
 }
 @media screen and (max-width: 1920px){
 .container-headlines {margin-left:15%;}
