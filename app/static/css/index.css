@@ -50,7 +50,7 @@ background-color: #A34700;
 padding: 5%;
 }
 
-/*.text_s {
+.text_s {
 color: #00D4F0;
 font-weight: bold;
 font-family: 'NTR';
@@ -66,7 +66,7 @@ font-size: 15px;
 
 .text-muted {
 color: #F06900;
-}*/
+}
 
 .card-title {
 color: #FF7D19;
