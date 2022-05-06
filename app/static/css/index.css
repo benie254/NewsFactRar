@@ -45,14 +45,14 @@ background-color: #A34700;
 padding: 5%;
 }
 
-p.card-text {
+.text_s {
 color: #00D4F0;
 font-weight: bold;
 font-family: 'NTR';
 font-size: 22px;
 }
 
-h6.card-text {
+.text {
 color: #0090A3;
 font-weight: bold;
 font-family: 'JetBrains Mono';
