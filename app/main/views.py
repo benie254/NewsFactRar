@@ -12,7 +12,7 @@ def index():
     :return: index page + data
     """
 
-    title = 'Welcome to NewsFactRar'
+    title = 'Home: Welcome to NewsFactRar'
 
     my_headlines = get_headlines()
     my_sources = get_sources()
