@@ -1,4 +1,5 @@
 /*import google*/
+
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
@@ -9,11 +10,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
 
 /*navbar*/
+
 .navbar a {
 color: #F06900;
 }
 
 /*media queries for sidebar*/
+
 @media screen and (max-width: 720px){
 div.container-macros-sidebar {display:none;}
 }
@@ -33,6 +36,7 @@ div.container-macros-sidebar {display:none;}
 }
 
 /*top headings for all pages*/
+
 .container-home h1, .container-bbc h1, .container-cnn h1, .container-sources h1, .container-articles h1, .container-tech h1, .container-tradar h1, .container-verge h1 {
 text-align: center;
 color: #FF7D19;
@@ -40,12 +44,13 @@ font-family:Bungee Inline;
 }
 
 /*all cards*/
-.card-content {
+
+/*.card-content {
 background-color: #A34700;
 padding: 5%;
-}
+}*/
 
-.text_s {
+/*.text_s {
 color: #00D4F0;
 font-weight: bold;
 font-family: 'NTR';
@@ -61,7 +66,7 @@ font-size: 15px;
 
 .text-muted {
 color: #F06900;
-}
+}*/
 
 .card-title {
 color: #FF7D19;
