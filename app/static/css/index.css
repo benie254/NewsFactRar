@@ -44,14 +44,14 @@ font-family:Bungee Inline;
 background-color: #A34700;
 padding: 5%;
 }
-.card-content p {
-color: black;
+div.card-content p {
+color: #00D4F0;
 font-weight: bold;
 font-family: 'NTR';
 font-size: 22px;
 }
-.card-content h6 {
-color: red;
+div.card-content h6 {
+color: #0090A3;
 font-weight: bold;
 font-family: 'JetBrains Mono';
 font-size: 15px;
