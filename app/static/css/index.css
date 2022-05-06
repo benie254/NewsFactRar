@@ -13,7 +13,7 @@
 color: #F06900;
 }
 
-div.container-macros-sidebar {
+div.container-macros-sidebar .sidebar {
 height:90%;
 }
 
@@ -30,7 +30,7 @@ div.container-macros-sidebar {display:none;}
 }
 @media screen and (max-width: 1080px){
 .container-headlines {margin-left:10%;}
-div.container-macros-sidebar .sidebar{max-height:70%}
+div.container-macros-sidebar .sidebar{height:70%}
 }
 @media screen and (max-width: 1920px){
 .container-headlines {margin-left:15%;}
@@ -55,6 +55,12 @@ font-family: 'NTR';
 font-size: 22px;
 }
 .card-content h6 {
+color: #001219;
+font-weight: bold;
+font-family: 'JetBrains';
+font-size: 15px;
+}
+.card-content p {
 color: #0090A3;
 font-weight: bold;
 font-family: 'JetBrains Mono';
