@@ -20,7 +20,7 @@ def get_headlines():
     :return: response to NewsApiClient request
     """
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     headlines = newsapi.get_top_headlines(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
