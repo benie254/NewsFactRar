@@ -62,9 +62,9 @@ def get_sources():
     :return: request
     """
 
-    get_sources_url = 'https://newsapi.org/v2/sources?language=en&apiKey=cf03c3d8de3e48ffa0b0ed1f93681891'
+    get_sources_url = 'https://newsapi.org/v2/sources?language=en&apiKey=0f9d0d42be174a258e016c6403ddd477'
 
-    'https://newsapi.org/v2/everything?q=us&from=2022-04-12&language=en&apiKey=cae08cf647104f67ba2f3b6a8c539dd9'
+    'https://newsapi.org/v2/everything?q=us&from=2022-04-12&language=en&apiKey=0f9d0d42be174a258e016c6403ddd477'
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -103,7 +103,7 @@ def process_sources_results(source_list):
 
 def get_articles():
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     articles = newsapi.get_everything(language='en', sources='bbc-news, cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
@@ -142,7 +142,7 @@ def get_articles():
 
 def get_bbc():
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     g_bbc = newsapi.get_everything(sources='bbc-news', language='en')
 
@@ -181,7 +181,7 @@ def get_bbc():
 
 def get_cnn():
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     g_cnn = newsapi.get_everything(sources='cnn',language='en')
 
@@ -220,7 +220,7 @@ def get_cnn():
 
 def get_tech():
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     g_tech = newsapi.get_everything(sources='techcrunch',language='en')
 
@@ -259,7 +259,7 @@ def get_tech():
 
 def get_tradar():
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     g_tradar = newsapi.get_everything(sources='techradar', language='en')
 
@@ -298,7 +298,7 @@ def get_tradar():
 
 def get_verge():
 
-    newsapi = NewsApiClient(api_key='cf03c3d8de3e48ffa0b0ed1f93681891')
+    newsapi = NewsApiClient(api_key='0f9d0d42be174a258e016c6403ddd477')
 
     g_verge = newsapi.get_everything(sources='the-verge',language='en')
 
