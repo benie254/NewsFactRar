@@ -13,11 +13,6 @@
 color: #F06900;
 }
 
-.sidebar {
-height:90%;
-width:200px;position:fixed;z-index:1;bottom:0;left:0;overflow-x:hidden;padding-top:20px;margin-left:1.5%;
-}
-
 /*media queries for sidebar*/
 @media screen and (max-width: 720px){
 div.container-macros-sidebar {display:none;}
@@ -31,7 +26,7 @@ div.container-macros-sidebar {display:none;}
 }
 @media screen and (max-width: 1080px){
 .container-headlines {margin-left:10%;}
-div.container-macros-sidebar .sidebar{height:70%}
+.sidebar{max-height:80%}
 }
 @media screen and (max-width: 1920px){
 .container-headlines {margin-left:15%;}
@@ -56,12 +51,6 @@ font-family: 'NTR';
 font-size: 22px;
 }
 .card-content h6 {
-color: #001219;
-font-weight: bold;
-font-family: 'JetBrains';
-font-size: 15px;
-}
-.card-content p {
 color: #0090A3;
 font-weight: bold;
 font-family: 'JetBrains Mono';
