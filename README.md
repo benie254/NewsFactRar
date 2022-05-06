@@ -13,11 +13,11 @@ NewsFactRar app displays news from the Newsapi. Users can find top headlines & v
 
 ## Screenshot
 
-<img src="https://user-images.githubusercontent.com/99865051/167086707-fd20932e-fc73-4d1e-9770-c5be5b3cc3c7.png" >
+<img src="https://user-images.githubusercontent.com/99865051/167088832-30230585-6422-43a3-98f3-e5725a383d54.png" >
 
 ## Screenshot #2
 
-<img src="https://user-images.githubusercontent.com/99865051/167086811-1c8b249d-0ade-4085-b8fd-29313fa78d47.png">
+<img src="https://user-images.githubusercontent.com/99865051/167088844-eaa3530e-d8c6-41a7-9338-5959aeee171f.png">
 
 ## Behavior Driven Development--BDD
 
