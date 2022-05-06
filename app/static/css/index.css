@@ -15,7 +15,7 @@ color: #F06900;
 
 /*media queries for sidebar*/
 @media screen and (max-width: 800px){
-div.container-sources {display:none;}
+div.container-macros-sidebar {display:none;}
 }
 @media screen and (max-width: 880px){
 .container-headlines {margin-left:10%}
@@ -39,7 +39,7 @@ font-family:Bungee Inline;
 background-color: #A34700;
 padding: 5%;
 }
-.card-content p {
+.card-content .card-text {
 color: #00D4F0;
 font-weight: bold;
 font-family: 'NTR';
