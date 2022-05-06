@@ -44,7 +44,7 @@ font-family:Bungee Inline;
 background-color: #A34700;
 padding: 5%;
 }
-.card-content .card-text {
+.card-text p {
 color: #00D4F0;
 font-weight: bold;
 font-family: 'NTR';
