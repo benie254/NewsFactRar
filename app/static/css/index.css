@@ -13,8 +13,9 @@
 color: #F06900;
 }
 
-div.container-macros-sidebar .sidebar {
+.sidebar {
 height:90%;
+width:200px;position:fixed;z-index:1;bottom:0;left:0;overflow-x:hidden;padding-top:20px;margin-left:1.5%;
 }
 
 /*media queries for sidebar*/
